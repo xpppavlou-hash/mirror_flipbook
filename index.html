@@ -1,0 +1,372 @@
+```html
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MIRROR - Πτυχιακή Εργασία</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+
+    margin:0;
+    min-height:100vh;
+
+    background:#636e7c;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    color:#f5f5f5;
+
+}
+
+
+.header{
+
+    width:90%;
+
+    margin:45px auto 30px;
+
+    text-align:right;
+
+}
+
+
+.header h1{
+
+    margin:0;
+
+    font-size:72px;
+
+    font-weight:900;
+
+    letter-spacing:5px;
+
+}
+
+
+.header h2{
+
+    margin:10px 0 35px;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+
+.header p{
+
+    margin:8px 0;
+
+    font-size:20px;
+
+}
+
+
+
+.flipbook-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-top:40px;
+
+}
+
+
+#book{
+
+    width:900px;
+
+    height:600px;
+
+}
+
+
+.page{
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+.page img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+}
+
+
+@media(max-width:768px){
+
+    .header h1{
+
+        font-size:45px;
+
+    }
+
+
+    .header h2{
+
+        font-size:22px;
+
+    }
+
+
+    .header p{
+
+        font-size:16px;
+
+    }
+
+
+    #book{
+
+        width:95vw;
+
+        height:65vw;
+
+    }
+
+}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<div class="header">
+
+<h1>MIRROR</h1>
+
+<h2>ΠΤΥΧΙΑΚΗ ΕΡΓΑΣΙΑ</h2>
+
+<p>Παπαπαύλου Χρυσοθέα Μαρία</p>
+
+<p>Αθήνα, Ιούλιος 2026</p>
+
+</div>
+
+
+
+<div class="flipbook-container">
+
+<div id="book"></div>
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"></script>
+
+
+<script>
+
+
+const pages = [
+
+"MIRRORFRONT.png",
+
+"MIRRORFRONTWHITE.png",
+
+"MIRROR1.png",
+
+"MIRROR2.png",
+
+"MIRROR3.png",
+
+"MIRROR4.png",
+
+"MIRROR5.png",
+
+"MIRROR6.png",
+
+"MIRROR7.png",
+
+"MIRROR8.png",
+
+"MIRROR9.png",
+
+"MIRROR10.png",
+
+"MIRROR11.png",
+
+"MIRROR12.png",
+
+"MIRROR13.png",
+
+"MIRROR14.png",
+
+"MIRROR15.png",
+
+"MIRROR16.png",
+
+"MIRROR17.png",
+
+"MIRROR18.png",
+
+"MIRROR19.png",
+
+"MIRROR20.png",
+
+"MIRROR21.png",
+
+"MIRROR22.png",
+
+"MIRROR23.png",
+
+"MIRROR24.png",
+
+"MIRROR25.png",
+
+"MIRROR26.png",
+
+"MIRROR27.png",
+
+"MIRROR28.png",
+
+"MIRROR29.png",
+
+"MIRROR30.png",
+
+"MIRROR31.png",
+
+"MIRROR32.png",
+
+"MIRROR33.png",
+
+"MIRROR34.png",
+
+"MIRROR35.png",
+
+"MIRROR36.png",
+
+"MIRROR37.png",
+
+"MIRROR38.png",
+
+"MIRROR39.png",
+
+"MIRROR40.png",
+
+"MIRROR41.png",
+
+"MIRROR42.png",
+
+"MIRROR43.png",
+
+"MIRROR44.png",
+
+"MIRROR45.png",
+
+"MIRROR46.png",
+
+"MIRROR47.png",
+
+"MIRROR48.png",
+
+"MIRROR49.png",
+
+"MIRROR50.png",
+
+"MIRRORBACKWHITE.png",
+
+"MIRRORBACK.png"
+
+];
+
+
+
+const book=document.getElementById("book");
+
+
+
+pages.forEach(file=>{
+
+
+    const page=document.createElement("div");
+
+    page.className="page";
+
+
+    const img=document.createElement("img");
+
+    img.src="pages/"+file;
+
+
+    page.appendChild(img);
+
+
+    book.appendChild(page);
+
+
+});
+
+
+
+const pageFlip = new St.PageFlip(
+
+book,
+
+{
+
+width:450,
+
+height:600,
+
+size:"stretch",
+
+showCover:true,
+
+useMouseEvents:true,
+
+mobileScrollSupport:true
+
+}
+
+);
+
+
+
+pageFlip.loadFromHTML(
+
+document.querySelectorAll(".page")
+
+);
+
+
+</script>
+
+
+</body>
+
+</html>
+```
